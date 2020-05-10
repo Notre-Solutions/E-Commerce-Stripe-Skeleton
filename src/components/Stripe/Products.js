@@ -14,6 +14,7 @@ export function GetProducts() {
             currency
             price
             product {
+              id
               metadata {
                 Category
               }
@@ -58,18 +59,21 @@ const Products = () => {
             <div>
               Category: {product.node.product.metadata.Category}
             </div>
-            <img src={product.node.imgage} alt="Product Image" />
+            <img src={product.node.image} alt="Product Image" />
             <button
               onClick={(e) =>
-                context.addToCart(1, product.node.id, null)
+                context.addToCart(
+                  1,
+                  product.node.id,
+                  product.node.price,
+                  'description',
+                  product.node.image,
+                  product.node.product.id,
+                )
               }
             >
               Add to Cart
             </button>
-            {/* <Checkout
-              items={[{ sku: edge.node.id, quantity: 1 }]}
-              name={edge.node.product.name}
-            /> */}
           </div>
         );
       })}

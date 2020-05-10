@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import Layout from '../components/layout';
 import { GetProducts } from '../components/Stripe/Products';
-import { CartProvider, CartContext } from '../components/cart';
+import { CartContext } from '../components/cart';
+
 function LandingPage() {
   return (
     <Fragment>
@@ -15,12 +16,14 @@ function LandingPage() {
 }
 
 function Landing() {
-  var products = GetProducts();
+  var context = useContext(CartContext);
+
   return (
     <CartContext.Consumer>
       {(context) => {
-        console.log(context);
-        (e)=>context.updateProducts(products);
+        // console.log(context);
+        // context.updateProducts(products);
+        // (e)=>context.updateProducts(products);
         return (
           <Layout>
             <LandingPage />

@@ -2,6 +2,8 @@ import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 
 const Checkout = ({ items }) => {
+  console.log('Item:');
+  console.log(items);
   const buttonStyles = {
     fontSize: '13px',
     color: '#fff',
@@ -21,8 +23,8 @@ const Checkout = ({ items }) => {
         allowedCountries: ['GB', 'US', 'IE'],
       },
       items: items,
-      successUrl: `http://localhost:8001/success/`,
-      cancelUrl: `http://localhost:8001/failed/`,
+      successUrl: `http://localhost:8000/success/`,
+      cancelUrl: `http://localhost:8000/failed/`,
     });
     if (error) {
       console.warn('Error:', error);
