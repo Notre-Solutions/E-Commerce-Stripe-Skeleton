@@ -2,6 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React, { useContext } from 'react';
 
 import { CartContext } from '../cart';
+import CheckoutWrapper from './Checkout';
 
 export function GetProducts() {
   const data = useStaticQuery(graphql`
@@ -61,18 +62,15 @@ const Products = () => {
             <img src={product.node.imgage} alt="Product Image" />
             <button
               onClick={(e) =>
-                context.addToCart(1, product.node.id, null)
+                context.addToCart(1, product.node.id, product.node.price)
               }
             >
               Add to Cart
             </button>
-            {/* <Checkout
-              items={[{ sku: edge.node.id, quantity: 1 }]}
-              name={edge.node.product.name}
-            /> */}
           </div>
         );
       })}
+      <CheckoutWrapper/>
     </div>
   );
 };

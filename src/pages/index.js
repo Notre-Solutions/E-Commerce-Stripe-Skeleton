@@ -20,7 +20,7 @@ function Landing() {
     <CartContext.Consumer>
       {(context) => {
         console.log(context);
-        (e)=>context.updateProducts(products);
+        // (e)=>context.updateProducts(products);
         return (
           <Layout>
             <LandingPage />
