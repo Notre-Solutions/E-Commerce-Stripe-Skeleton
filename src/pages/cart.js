@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout';
-import { CartContext } from '../components/cart';
-import { AuthUserContext } from '../components/Session';
 
 import Bag from '../components/cart/cartComponent';
+
+/**
+ * @file cart.js is the cart page.
+ * @author Stephen Kelehan and Nyasha Mutangadura
+ */
 
 class Cart extends Component {
   constructor(props) {

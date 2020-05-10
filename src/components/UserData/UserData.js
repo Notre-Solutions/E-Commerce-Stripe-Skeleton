@@ -102,7 +102,6 @@ class UserData extends Component {
             });
           } else {
             this.setState({ laoding: false });
-            console.log('hi');
           }
         });
     }
@@ -132,7 +131,6 @@ class UserData extends Component {
 
   addOrUpdateUserData = (event, authUser) => {
     if (this.state.userCreated) {
-      console.log('here');
       this.onEditUserData();
     } else {
       this.onCreateUserData(authUser);
@@ -166,13 +164,6 @@ class UserData extends Component {
   onRemoveUser = (uid) => {
     this.props.firebase.userData(uid).remove();
   };
-
-  // onNextPage = () => {
-  //   this.setState(
-  //     (state) => ({ limit: state.limit + 5 }),
-  //     this.onListenForMessages,
-  //   );
-  // };
 
   myChangeHandler = (event) => {
     let nam = event.target.name;

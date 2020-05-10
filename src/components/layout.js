@@ -4,6 +4,10 @@ import Navigation from './Navigation';
 import getFirebase, { FirebaseContext } from './Firebase';
 import withAuthentication from './Session/withAuthentication';
 
+/**
+ * @file payment-success.js this is the page user is sent to when stripe payment is successful
+ * @author Stephen Kelehan and Nyasha Mutangadura
+ */
 class Layout extends Component {
   state = {
     firebase: null,

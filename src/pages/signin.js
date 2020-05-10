@@ -9,6 +9,12 @@ import SignInForm, {
 import { SignUpLink } from '../components/SignUp';
 import { PasswordForgetLink } from '../components/PasswordForget';
 
+/**
+ * @file signin.js
+ * @desc This allows the user to sign in with FB, Google, Twitter and with password and email
+ * @author Stephen Kelehan and Nyasha Mutangadura
+ */
+
 const SignInPage = () => (
   <Fragment>
     <h1>SignIn</h1>

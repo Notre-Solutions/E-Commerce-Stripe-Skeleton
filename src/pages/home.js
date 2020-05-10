@@ -8,6 +8,12 @@ import {
 } from '../components/Session';
 import Messages from '../components/Messages';
 import Products from '../components/Stripe/Products';
+
+/**
+ * @file home.js is the home page desplays product and Message components
+ * @author Stephen Kelehan and Nyasha Mutangadura
+ */
+
 const HomePageBase = () => (
   <div>
     <h1>Home Page</h1>

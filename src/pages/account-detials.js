@@ -9,6 +9,11 @@ import {
 } from '../components/Session';
 import UserData from '../components/UserData';
 
+/**
+ * @file accout-details.js this file returns the authUser content
+ * @author Nyasha Mutangadura and Stephen Kelehan
+ */
+
 const AccountPageBase = () => (
   <Fragment>
     <AuthUserContext.Consumer>

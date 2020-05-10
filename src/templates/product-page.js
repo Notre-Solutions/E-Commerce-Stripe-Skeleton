@@ -3,6 +3,19 @@ import Layout from '../components/layout';
 import { CartContext } from '../components/cart';
 import { graphql } from 'gatsby';
 
+/**
+ * @file product-page.js is a template for the product pages.
+ * @author Nyasha Mutangadura and Stephen Kelehan
+ */
+
+/**
+ * Product Page Functional Component
+ * @function ProductPage
+ * @param  data - Product ID
+ * @param  pageContext - Stripe Data
+ * @returns Page Content - Product of n1 and n2
+ */
+
 export default function ProductPage({ data, pageContext }) {
   const context = useContext(CartContext);
   const skus = data.allStripeSku.edges;

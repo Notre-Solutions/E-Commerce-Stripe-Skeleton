@@ -11,10 +11,15 @@ import PasswordForgetForm from '../components/PasswordForget';
 import PasswordChangeForm from '../components/PasswordChange';
 import LoginManagement from '../components/LoginManagement';
 
+/**
+ * @file account.js has both Password Forgot and Password Change functionality
+ * @author Nyasha Mutangadura and Stephen Kelehan
+ */
+
 const AccountPageBase = () => (
   <Fragment>
     <AuthUserContext.Consumer>
-      {authUser => (
+      {(authUser) => (
         <div>
           <h1>Account: {authUser.email}</h1>
           <PasswordForgetForm />
@@ -26,7 +31,13 @@ const AccountPageBase = () => (
   </Fragment>
 );
 
-const condition = authUser => !!authUser;
+const condition = (authUser) => !!authUser;
+
+/**
+ * Page is wrapped in withAuth and withEmail
+ * Thus it is onluy avalible when email is verified and user is signed in
+ *
+ */
 
 const AccountPage = compose(
   withEmailVerification,
