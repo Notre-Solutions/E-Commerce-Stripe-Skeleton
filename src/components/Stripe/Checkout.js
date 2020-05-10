@@ -1,9 +1,19 @@
-import React from 'react';
+'use strict';
+import React, { useContext } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
+import { CartContext } from '../cart';
 
-const Checkout = ({ items }) => {
-  console.log('Item:');
-  console.log(items);
+const CheckoutWrapper = () => {
+  return (
+    <CartContext.Consumer>
+      {(context) => {
+        console.log(context.checkoutItems);
+        return <Checkout items={context.checkoutItems} />;
+      }}
+    </CartContext.Consumer>
+  );
+};
+export const Checkout = ({ items }) => {
   const buttonStyles = {
     fontSize: '13px',
     color: '#fff',
@@ -20,11 +30,11 @@ const Checkout = ({ items }) => {
     const stripeCheckout = await stripePromise;
     const { error } = await stripeCheckout.redirectToCheckout({
       shippingAddressCollection: {
-        allowedCountries: ['GB', 'US', 'IE'],
+        allowedCountries: ['GB'],
       },
       items: items,
-      successUrl: `http://localhost:8000/success/`,
-      cancelUrl: `http://localhost:8000/failed/`,
+      successUrl: `http://localhost:8000/payment-success/`,
+      cancelUrl: `http://localhost:8000/payment-failure/`,
     });
     if (error) {
       console.warn('Error:', error);
@@ -33,9 +43,9 @@ const Checkout = ({ items }) => {
   return (
     <div>
       <button style={buttonStyles} onClick={redirectToCheckout}>
-        Go To CheckOut
+        CheckOut
       </button>
     </div>
   );
 };
-export default Checkout;
+export default CheckoutWrapper;

@@ -4,16 +4,10 @@ import Navigation from './Navigation';
 import getFirebase, { FirebaseContext } from './Firebase';
 import withAuthentication from './Session/withAuthentication';
 
-
-
-
 class Layout extends Component {
   state = {
     firebase: null,
   };
-
-  
-  
 
   componentDidMount() {
     const app = import('firebase/app');
@@ -28,7 +22,6 @@ class Layout extends Component {
   }
 
   render() {
-    
     return (
       <FirebaseContext.Provider value={this.state.firebase}>
         <AppWithAuthentication

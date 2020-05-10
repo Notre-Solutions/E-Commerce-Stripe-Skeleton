@@ -1,7 +1,5 @@
-import React, { Fragment, useContext, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import Layout from '../components/layout';
-import { GetProducts } from '../components/Stripe/Products';
-import { CartContext } from '../components/cart';
 
 function LandingPage() {
   return (
@@ -16,21 +14,10 @@ function LandingPage() {
 }
 
 function Landing() {
-  var context = useContext(CartContext);
-
   return (
-    <CartContext.Consumer>
-      {(context) => {
-        // console.log(context);
-        // context.updateProducts(products);
-        // (e)=>context.updateProducts(products);
-        return (
-          <Layout>
-            <LandingPage />
-          </Layout>
-        );
-      }}
-    </CartContext.Consumer>
+    <Layout>
+      <LandingPage />
+    </Layout>
   );
 }
 

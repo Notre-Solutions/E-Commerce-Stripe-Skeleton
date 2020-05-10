@@ -2,6 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React, { useContext } from 'react';
 
 import { CartContext } from '../cart';
+import CheckoutWrapper from './Checkout';
 
 export function GetProducts() {
   const data = useStaticQuery(graphql`
@@ -77,6 +78,7 @@ const Products = () => {
           </div>
         );
       })}
+      <CheckoutWrapper />
     </div>
   );
 };

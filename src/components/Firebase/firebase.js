@@ -130,9 +130,9 @@ class Firebase {
 
 let firebase;
 
-function getFirebase(app, auth, database) {
+function getFirebase(app) {
   if (!firebase) {
-    firebase = new Firebase(app, auth, database);
+    firebase = new Firebase(app);
   }
 
   return firebase;

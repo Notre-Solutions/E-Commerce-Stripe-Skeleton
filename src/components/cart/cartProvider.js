@@ -53,7 +53,7 @@ class CartProvider extends Component {
     if (currentCartItems[skuId]) {
       currentCartItems[skuId].quantity += quantity;
       checkoutItems.forEach((item) => {
-        if (item.skuId === skuId) {
+        if (item.sku === skuId) {
           item.quantity += quantity;
         }
       });
@@ -66,7 +66,7 @@ class CartProvider extends Component {
         img,
         productId,
       };
-      checkoutItems.push({ skuId, quantity });
+      checkoutItems.push({ sku: skuId, quantity });
     }
 
     this.saveInCookies(cartTotal, currentCartItems, checkoutItems);
@@ -92,14 +92,14 @@ class CartProvider extends Component {
         currentCartItems[skuId].quantity =
           currentCartItems[skuId].quantity - quantity;
         checkoutItems.forEach((item) => {
-          if (item.skuId === skuId) {
+          if (item.sku === skuId) {
             item.quantity -= quantity;
           }
         });
       } else {
         delete currentCartItems[skuId];
         checkoutItems.forEach((item, i) => {
-          if (item.skuId === skuId) {
+          if (item.sku === skuId) {
             checkoutItems.slice(i, 1);
           }
         });
