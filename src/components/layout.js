@@ -1,8 +1,11 @@
 import React, { Component, Fragment } from 'react';
 
 import Navigation from './Navigation';
+import Footer from './Footer';
 import getFirebase, { FirebaseContext } from './Firebase';
 import withAuthentication from './Session/withAuthentication';
+import '@fortawesome/fontawesome-free/css/all.css';
+import '../css/main.css';
 
 /**
  * @file payment-success.js this is the page user is sent to when stripe payment is successful
@@ -39,8 +42,9 @@ class Layout extends Component {
 const AppWithAuthentication = withAuthentication(({ children }) => (
   <Fragment>
     <Navigation />
-    <hr />
-    {children}
+    <div className="layout">{children}</div>
+    <div className="push"></div>
+    <Footer />
   </Fragment>
 ));
 

@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  //   font-family: "Asap", sans-serif;
+  //   font-weight: 400;
+  line-height: 1.7;
+  color: black;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+ul {
+  list-style-type: none;
+}
+
+ol li {
+  margin-left: 2em;
+}
+
+li {
+  text-decoration: none;
+}

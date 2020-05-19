@@ -9,6 +9,7 @@
     "doc": "jsdoc -c jsdoc.json"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "@stripe/stripe-js": "^1.5.0",
     "core-js": "^2.6.5",
     "firebase": "^6.0.2",

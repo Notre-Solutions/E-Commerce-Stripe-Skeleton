@@ -1,0 +1,19 @@
+// Importing Utils
+
+@import './Utils/functions';
+@import './Utils/variables';
+@import './Utils/mixins';
+@import './Utils/responsive';
+
+// Importing Themes
+
+// Importing Pages
+
+// Importing Base
+@import '../scss/Base/base-config';
+
+// Importing Components
+@import './Components/navigations';
+@import './Components/layout';
+@import './Components/search';
+@import './Components/footer';

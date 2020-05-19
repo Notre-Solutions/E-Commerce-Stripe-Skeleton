@@ -1,0 +1,49 @@
+@mixin media-sm {
+  @media screen and (min-width: 200px) {
+    @content;
+  }
+}
+
+// 666px or Smaller
+@mixin media-sm-rev {
+  @media screen and (max-width: 666px) {
+    @content;
+  }
+}
+
+@mixin media-landscape {
+  @media screen and (orientation: landscape) and (max-height: 720px) {
+    @content;
+  }
+}
+
+// 1024px or Smaller
+@mixin media-md {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+// 1024px or Larger
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-animation-lg {
+  @media screen and (max-width: 1100px) {
+    @content;
+  }
+}
+
+// 1600px or Larger
+@mixin media-xl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}

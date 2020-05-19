@@ -1,0 +1,12 @@
+.footer {
+  background: $main-background-color;
+  bottom: 0;
+  width: 100%;
+  height: $footer-height;
+  color: $main-text-color;
+
+  &-social-icons {
+    color: $main-text-color;
+    font-size: 5rem;
+  }
+}

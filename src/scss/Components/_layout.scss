@@ -1,0 +1,9 @@
+.layout {
+  padding-top: 6rem;
+  min-height: calc(100vh - #{$footer-height});
+  margin-bottom: -$footer-height;
+}
+
+.push {
+  height: $footer-height;
+}
