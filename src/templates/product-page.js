@@ -39,6 +39,7 @@ export default function ProductPage({ data, pageContext }) {
                     'desc',
                     sku.node.image,
                     sku.node.product.id,
+                    sku.node.attributes.name,
                   )
                 }
               >

@@ -1,0 +1,71 @@
+.cart {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  &-items {
+    margin: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    align-items: center;
+    font-size: 1.6rem;
+
+    &-img {
+      width: 25rem;
+    }
+    &-name {
+      &-desc {
+      }
+    }
+    &-qty {
+      &-plus-minus {
+        margin: 0 1rem 0 1rem;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    &-price {
+      &-value {
+        font-weight: bold;
+      }
+    }
+  }
+  &-total {
+    border: 0.1rem solid black;
+    height: 35rem;
+    width: 30rem;
+    margin: 7rem 0 0 0;
+    position: relative;
+    padding: 2rem;
+    font-size: 2rem;
+
+    &-value {
+      font-weight: bold;
+    }
+
+    &-postage-value {
+      font-weight: bold;
+    }
+
+    input[type='text'] {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      border: 0.2rem solid black;
+      width: 90%;
+      margin-bottom: 2rem;
+    }
+  }
+  &-empty-cart {
+    @include main-button(white);
+    width: 16rem;
+    margin: 0 0 10rem 10rem;
+    &:hover {
+      @include hover-btn;
+    }
+    &:active {
+      @include active-btn;
+    }
+  }
+}

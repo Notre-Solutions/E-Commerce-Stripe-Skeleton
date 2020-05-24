@@ -203,6 +203,90 @@ li {
       -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
               box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
+.cart {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%; }
+  .cart-items {
+    margin: 5rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1.6rem; }
+    .cart-items-img {
+      width: 25rem; }
+    .cart-items-qty-plus-minus {
+      margin: 0 1rem 0 1rem; }
+      .cart-items-qty-plus-minus:hover {
+        cursor: pointer; }
+    .cart-items-price-value {
+      font-weight: bold; }
+  .cart-total {
+    border: 0.1rem solid black;
+    height: 35rem;
+    width: 30rem;
+    margin: 7rem 0 0 0;
+    position: relative;
+    padding: 2rem;
+    font-size: 2rem; }
+    .cart-total-value {
+      font-weight: bold; }
+    .cart-total-postage-value {
+      font-weight: bold; }
+    .cart-total input[type='text'] {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      border: 0.2rem solid black;
+      width: 90%;
+      margin-bottom: 2rem; }
+  .cart-empty-cart {
+    color: black;
+    background: white;
+    border: 0.1rem solid black;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 0.8rem 4rem;
+    width: 16rem;
+    margin: 0 0 10rem 10rem; }
+    .cart-empty-cart:hover {
+      cursor: pointer;
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05); }
+    .cart-empty-cart:active {
+      -webkit-transform: translateY(0.2rem);
+              transform: translateY(0.2rem);
+      -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+              box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.checkout {
+  color: white;
+  background: black;
+  padding: 1rem 1rem 1rem 2rem;
+  border-radius: 0.3rem;
+  width: 15rem;
+  font-size: 1rem; }
+  .checkout .fa {
+    margin-left: 1rem; }
+  .checkout:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  .checkout:active {
+    -webkit-transform: translateY(0.2rem);
+            transform: translateY(0.2rem);
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
 .homePage .line {
   width: 100%;
   height: 0.1rem;

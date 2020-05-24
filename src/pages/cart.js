@@ -16,7 +16,9 @@ class Cart extends Component {
   render() {
     return (
       <Layout>
-        <Bag />
+        <div className="container">
+          <Bag />
+        </div>
       </Layout>
     );
   }
