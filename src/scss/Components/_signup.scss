@@ -1,0 +1,25 @@
+.signUp {
+  margin: 3rem 0 3rem 0;
+
+  input[type='text'] {
+    @include inputBox;
+    margin-bottom: 3.5rem;
+  }
+
+  input[type='password'] {
+    @include inputBox;
+    margin-bottom: 3.5rem;
+  }
+
+  &-submit-btn {
+    @include main-button(white);
+    @include transition-ease;
+    width: 20rem;
+    &:hover {
+      @include hover-btn;
+    }
+    &:active {
+      @include active-btn;
+    }
+  }
+}

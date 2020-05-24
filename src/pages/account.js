@@ -10,21 +10,32 @@ import {
 import PasswordForgetForm from '../components/PasswordForget';
 import PasswordChangeForm from '../components/PasswordChange';
 import LoginManagement from '../components/LoginManagement';
-
+import SideTab from '../components/SideTabBar';
 /**
  * @file account.js has both Password Forgot and Password Change functionality
  * @author Nyasha Mutangadura and Stephen Kelehan
  */
 
+const tabName = [
+  'Your Orders',
+  'Update Your Details',
+  'Refer A Friend',
+  'Countact Us',
+  'Refunds',
+  'Log Out',
+];
+const tabConent = [<></>, <></>, <></>, <></>, <></>, <></>];
+
 const AccountPageBase = () => (
   <Fragment>
     <AuthUserContext.Consumer>
       {(authUser) => (
-        <div>
+        <div className="container">
           <h1>Account: {authUser.email}</h1>
           <PasswordForgetForm />
           <PasswordChangeForm />
           <LoginManagement authUser={authUser} />
+          <SideTab tabNames={tabName} tabContent={tabConent} />
         </div>
       )}
     </AuthUserContext.Consumer>

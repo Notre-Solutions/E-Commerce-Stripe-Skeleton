@@ -11,3 +11,4 @@ export const ADMIN_DETAILS = '/admin/:id';
 export const ACCOUNT_DETAILS = '/account-detials';
 export const CART = '/cart';
 export const CONTACT = '/contact';
+export const LOGGEDOUT = '/logged-out';

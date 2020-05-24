@@ -17,6 +17,14 @@
 @import './Components/joinPictureBtn';
 @import './Components/cart';
 @import './Components/checkout';
+@import './Components/signin';
+@import './Components/passwordForget';
+@import './Components/signup';
+@import './Components/sideTabBar';
 
 // Importing Pages
 @import './Pages/home';
+@import './Pages/singleProductPage';
+@import './Pages/loggedOut';
+@import './Pages/signInSignUp';
+@import './Pages/passwordFoget';

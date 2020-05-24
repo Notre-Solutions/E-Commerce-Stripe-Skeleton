@@ -9,8 +9,10 @@ import PasswordForgetForm from '../components/PasswordForget';
  */
 const PasswordForgetPage = () => (
   <Fragment>
-    <h1>PasswordForget</h1>
-    <PasswordForgetForm />
+    <div className="passwordForgetPage">
+      <h1>Forgot Your Password?</h1>
+      <PasswordForgetForm />
+    </div>
   </Fragment>
 );
 

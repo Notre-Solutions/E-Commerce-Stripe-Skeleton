@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, Component } from 'react';
 import Layout from '../components/layout';
 import { CartContext } from '../components/cart';
 import { graphql } from 'gatsby';
@@ -16,23 +16,23 @@ import { graphql } from 'gatsby';
  * @returns Page Content - Product of n1 and n2
  */
 
-export default function ProductPage({ data, pageContext }) {
-  const context = useContext(CartContext);
-  const skus = data.allStripeSku.edges;
-  return (
-    <Layout>
+class ProductPageMain extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const skus = this.props.data.allStripeSku.edges;
+    return (
       <div>
-        <p>{pageContext.productId}</p>
         {skus.map((sku) => {
           return (
             <div>
-              <p>{sku.node.id}</p>
               <p>{sku.node.currency}</p>
-              <p>{sku.node.price}</p>
+              <p>{sku.node.price / 100}</p>
               <p>{sku.node.attributes.name}</p>
               <button
                 onClick={(e) =>
-                  context.addToCart(
+                  this.props.context.addToCart(
                     1,
                     sku.node.id,
                     sku.node.price,
@@ -45,14 +45,28 @@ export default function ProductPage({ data, pageContext }) {
               >
                 Add to Cart
               </button>
-              <p>---------------------------</p>
             </div>
           );
         })}
       </div>
+    );
+  }
+}
+
+const ProductPage = ({ data, pageContext }) => {
+  const context = useContext(CartContext);
+  return (
+    <Layout>
+      <ProductPageMain
+        data={data}
+        pageContext={pageContext}
+        context={context}
+      ></ProductPageMain>
     </Layout>
   );
-}
+};
+
+export default ProductPage;
 
 export const pageQuery = graphql`
   query GetSkus($productId: String!) {
