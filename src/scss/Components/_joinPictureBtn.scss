@@ -1,0 +1,19 @@
+.JoinPictureBtn {
+  @include transition-ease;
+  &-img {
+    width: 45rem;
+    margin-bottom: 20rem;
+  }
+
+  &-btn {
+    margin-left: 12rem;
+    @include main-button(white);
+    &:hover {
+      @include hover-btn;
+    }
+    &:active {
+      @include active-btn;
+    }
+  }
+  margin-bottom: 10rem;
+}

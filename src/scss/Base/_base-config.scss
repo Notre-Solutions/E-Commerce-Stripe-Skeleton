@@ -38,3 +38,9 @@ ol li {
 li {
   text-decoration: none;
 }
+
+.hover {
+  &:hover {
+    cursor: pointer;
+  }
+}

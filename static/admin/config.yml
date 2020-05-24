@@ -1,0 +1,219 @@
+backend:
+  name: git-gateway
+  branch: master
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
+    
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "articles"
+    label: "articles"
+    folder: "src/content/articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "article"}
+      - {label: "Features Post", name: "featuredpost", widget: "boolean", default: true}
+      - {label: "Article", name: "article", widget: object, fields: [
+        {label: "Title", name: "title", widget: string},
+        {label: "Date", name: "date", widget: date},
+        {label: "URL", name: "url", widget: string},
+        {label: "Thumbnail", name: "thumbnail", widget: image}
+      ]}
+  - name: "products"
+    label: "Products"
+    folder: "src/content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Alias", name: "alias", widget: "string"}
+      - {label: "Video URL", name: "url", widget: 'string', required: true}
+      - {label: "Featured Image", name: "featuredimage", widget: "image"}
+      - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: true}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Product Page", name: "productpage", widget: "object", fields: [
+          {label: "Timeline Items", name: "timeline", widget: list, fields:[
+            {label: "Title", name: "title", widget: string, required: true},
+            {label: "Description", name: "description", widget: "markdown", required: true}
+          ]},
+          {label: "Features", name: "features", widget: list, fields:[
+            {label: "Title", name: "title", widget: string, required: true},
+            {label: "Description", name: "description", widget: "markdown", required: true}
+          ]},
+          {label: "Custermers Reported", name: "customerReports", widget: list, fields:[
+            {label: "Percentage", name: "percentage", widget: number, required: true},
+            {label: "Description", name: "description", widget: "markdown", required: true}
+          ]},
+         {label: "Integration Section", name: "integration", widget: "object", fields: [
+          {label: "Paragraph", name: "paragraph", widget: string, required: true},
+          {label: "Integration Options", name: "integrations", widget: list, fields:[
+            {label: "Icon", name: "icon", widget: string, required: true},
+            {label: "Description", name: "description", widget: "markdown", required: true}
+          ]}
+        ]}
+      ]}
+            
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "landingPage"
+        fields:
+          - {label: "Template Key", name: templateKey, widget: "hidden", default: "landing-page"}
+          - {label: "Landing Page", name: landingPage, widget: object, fields:[
+              {label: "Subtitle", name: subtitle, widget: object, fields: [
+                {label: "Line 1", name: line1, widget: string, required: true},
+                {label: "Line 2", name: line2, widget: string, required: true},
+                {label: "Line 3", name: line3, widget: string, required: true}
+              ]},
+              {label: "How does Inship Work", name: sectionE, widget: object, fields: [
+                {label: "Title", name: title, widget: string, required: true},
+                {label: "Show?", name: show, widget: boolean, required: true, default: true},
+                {label: "Slogon", name: slogon, widget: markdown, required: true},
+                {label: "Cards", name: "cards", widget: list, fields:[
+                  {label: "Title", name: "title", widget: string, required: true},
+                  {label: "Icon", name: "icon", widget: string, required: true},
+                  {label: "Description", name: "text", widget: "string", required: true}
+              ]}
+              ]},
+              {label: "What We Do", name: sectionA, widget: object, fields: [
+                {label: "Title", name: title, widget: string, required: true},
+                {label: "Show?", name: show, widget: boolean, required: true, default: true},
+                {label: "Body", name: body, widget: markdown, required: true}
+              ]},
+              {label: "The Problem", name: sectionB, widget: object, fields: [
+                {label: "Title", name: title, widget: string, required: true},
+                {label: "Show?", name: show, widget: boolean, required: true, default: true},
+                {label: "Cards", name: "cards", widget: list, fields:[
+                  {label: "Title", name: "title", widget: string, required: true},
+                  {label: "Description", name: "description", widget: "markdown", required: true}
+              ]}
+              ]},
+              {label: "The Problem *NEW*", name: sectionB_alt, widget: object, fields: [
+                {label: "Title", name: title, widget: string, required: true},
+                {label: "Show?", name: show, widget: boolean, required: true, default: true},
+                {label: "Cards", name: "cards", widget: list, fields:[
+                  {label: "Title", name: "title", widget: string, required: true},
+                  {label: "Show Read More?", name: "showReadMore", widget: boolean, required: true},
+                  {label: "Read More Link", name: "readMore", widget: string, required: true},
+                  {label: "Subtitle", name: "subtitle", widget: string, required: true},
+                  {label: "Description", name: "description", widget: "markdown", required: true}
+              ]}
+              ]},
+              {label: "Products", name: sectionC, widget: object, fields:[
+                {label: "Show?", name: show, widget: boolean, required: true, default: true}
+              ]},
+              {label: "Process Flow", name: sectionD, widget: object, fields:[
+              {label: "Title", name: title, widget: string, required: true},
+              {label: "Show?", name: "show", widget: boolean, required: true}
+              ]}
+          ]}
+          - {label: "Body", name: "name", widget: "markdown", required: false}
+      - file: "src/content/product-template/index.md"
+        label: "Product Page Template"
+        name: "productPage"
+        fields:
+          - {label: "Template Key", name: templateKey, widget: "hidden", default: "productPageTemplate"}
+          - {label: "Product Page", name: productPageTemplate, widget: object, fields: [
+            {label: "Section A Title", name: sectionATitle, widget: string},
+            {label: "Section B Title", name: sectionBTitle, widget: string},
+            {label: "Section C Titles", name: sectionCTitles, widget: object, fields: [
+              {label: "Title", name: title, widget: string},
+              {label: "Subtitle", name: subtitle, widget: string},
+            ]},
+            {label: "Section D Title", name: sectionDTitle, widget: string},
+            {label: "Section D Subtitle", name: sectionDSubtitle, widget: string},
+            {label: "Section E Title", name: sectionETitle, widget: string},
+            {label: "Side Nav Bar", name: "sideNavBar", widget: list, fields:[
+              {label: "Name", name: "name", widget: string, required: true},
+              {label: "Icon", name: "icon", widget: "string", required: true}
+          ]}
+          ]}
+      - file: "src/pages/contact/index.md"
+        label: "Contact Page"
+        name: "contactPage"
+        fields:
+          - {label: "Template Key", name: templateKey, widget: "hidden", default: "contactPage"}
+          - {label: "Contact Page", name: contactPage, widget: object, fields: [
+            {label: "Contact Page Title", name: title, widget: string},
+            {label: "Contact Page Subtitle", name: subtitle, widget: string},
+            {label: "Location", name: location, widget: object, fields: [
+              {label: "Title", name: title, widget: string},
+              {label: "Icon", name: icon, widget: string},
+              {label: "Description", name: description, widget: object, feilds: [
+                {label: "Address Line 1", name: line1, widget: string},
+                {label: "Address Line 2", name: line2, widget: string},
+                {label: "Address Line 3", name: line3, widget: string},
+                {label: "Address Line 4", name: line4, widget: string},
+                {label: "Address Line 5", name: line5, widget: string},
+              ]},
+            ]},
+            {label: "Phone", name: phone, widget: object, fields: [
+              {label: "Title", name: title, widget: string},
+              {label: "Icon", name: icon, widget: string},
+              {label: "Description", name: description, widget: string},
+            ]},
+            {label: "Email", name: email, widget: object, fields: [
+              {label: "Title", name: title, widget: string},
+              {label: "Icon", name: icon, widget: string},
+              {label: "Description", name: description, widget: string},
+            ]},         
+          ]}
+      - file: "src/pages/automate/index.md"
+        label: "Automate Page"
+        name: "automatePage"
+        fields:
+          - {label: "Template Key", name: templateKey, widget: "hidden", default: "automatePage"}
+          - {label: "Automate Page", name: automatePage, widget: object, fields: [
+            {label: "Title", name: title, widget: string},
+            {label: "Animation Title", name: animationTitle, widget: string},
+            {label: "News Title", name: newsTitle, widget: string},
+            {label: "Testimonials", name: sectionB, widget: object, fields: [
+              {label: "Testimonial Title", name: title, widget: string},
+              {label: "Testimonials", name: "testimonials", widget: list, fields:[
+                {label: "Title", name: "title", widget: string, required: true},
+                {label: "Stars", name: "stars", widget: number, required: true},
+                {label: "Name", name: "name", widget: string, required: true},
+                {label: "Description", name: "description", widget: "markdown", required: true}
+                ]}
+              ]},
+            {label: "Process Blurb", name: sectionC, widget: object, fields: [
+              {label: "Description", name: description, widget: markdown, required: true}
+            ]},
+            {label: "Case Studies", name: "sectionD", widget: list, fields:[
+              {label: "Title", name: "title", widget: string, required: true},
+              {label: "The Issue", name: "theIssue", widget: string, required: true},
+              {label: "The Brief", name: "theBrief", widget: string, required: true},
+              {label: "The Solution", name: "theSolution", widget: string, required: true},
+              {label: "The Feedback", name: "clientFeedback", widget: string, required: true}
+              ]}
+
+            ]}      
+      - file: "src/pages/resources/index.md"
+        label: "Resources Page"
+        name: "resourcesPage"
+        fields:
+          - {label: "Template Key", name: templateKey, widget: "hidden", default: "resourcesPage"}
+          - {label: "Resources Page", name: resourcesPage, widget: object, fields: [
+            {label: "Sub Title", name: titleBlurb, widget: string},
+            {label: "Cards", name: "cards", widget: list, fields:[
+              {label: "Title", name: "title", widget: string, required: true},
+              {label: "Subtitle", name: "subtitle", widget: string, required: true},
+              {label: "Icon", name: "icon", widget: string, required: true},
+              {label: "Show Read More?", name: "showReadMore", widget: boolean, required: true},
+              {label: "Read More Link", name: "readMore", widget: string, required: true},
+              {label: "Tile Over Icon", name: "titleOverlayIcon", widget: string, required: true},
+              {label: "Description", name: "description", widget: "markdown", required: true}
+              ]}
+          ]}
+

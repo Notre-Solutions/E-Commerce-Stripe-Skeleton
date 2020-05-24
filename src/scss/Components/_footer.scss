@@ -5,8 +5,73 @@
   height: $footer-height;
   color: $main-text-color;
 
-  &-social-icons {
-    color: $main-text-color;
-    font-size: 5rem;
+  a {
+    color: white;
+  }
+
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  padding-top: 2rem;
+
+  &-section-1 {
+    margin-left: 20rem;
+    text-align: center;
+    color: white !important;
+    &-logo-main {
+      font-size: 2rem;
+    }
+    &-social-icons {
+      z-index: 2;
+      color: $main-text-color;
+      font-size: 5rem;
+    }
+  }
+
+  &-section-2 {
+    width: 100%;
+    text-align: left;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    &-title {
+      font-size: 1.2rem;
+      padding: 1.5rem 0 2rem 0;
+    }
+
+    &-link {
+      font-size: 1.2rem;
+    }
+  }
+
+  &-section-3 {
+    &-title {
+      font-size: 2.5rem;
+    }
+    &-subtitle {
+      width: 30rem;
+      font-size: 1.2rem;
+    }
+    &-form {
+      input[type='text'] {
+        padding: 0.8rem;
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        width: 20rem;
+        background: transparent;
+        color: white;
+      }
+
+      &-subscribe-button {
+        background: white;
+        color: black;
+        padding: 1.2rem;
+        border-radius: 0.5rem;
+        font-size: 1.1rem;
+        margin-left: 2rem;
+        width: 11rem;
+      }
+    }
   }
 }

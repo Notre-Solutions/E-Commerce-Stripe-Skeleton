@@ -1,13 +1,10 @@
 // Importing Utils
-
 @import './Utils/functions';
 @import './Utils/variables';
 @import './Utils/mixins';
 @import './Utils/responsive';
 
 // Importing Themes
-
-// Importing Pages
 
 // Importing Base
 @import '../scss/Base/base-config';
@@ -17,3 +14,7 @@
 @import './Components/layout';
 @import './Components/search';
 @import './Components/footer';
+@import './Components/joinPictureBtn';
+
+// Importing Pages
+@import './Pages/home';

@@ -47,3 +47,29 @@
 @mixin transition-ease {
   transition: all 0.5s ease-in-out;
 }
+
+@mixin main-button($color) {
+  @if ($color == white) {
+    color: black;
+    background: white;
+    border: 0.1rem solid black;
+  } @else {
+    color: white;
+    background: black;
+  }
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.8rem 4rem;
+}
+
+@mixin hover-btn {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+@mixin active-btn {
+  transform: translateY(0.2rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}

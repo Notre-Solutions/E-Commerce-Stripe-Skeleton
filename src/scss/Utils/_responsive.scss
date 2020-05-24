@@ -11,4 +11,8 @@
 }
 
 @include media-xl {
+  .container {
+    max-width: 2048px !important;
+    margin: 0 10% !important;
+  }
 }
