@@ -17,13 +17,18 @@
     margin-left: 20rem;
     text-align: center;
     color: white !important;
-    &-logo-main {
-      font-size: 2rem;
+    &-logo {
+      text-align: center;
+      &-img {
+        width: 10rem;
+      }
     }
     &-social-icons {
-      z-index: 2;
       color: $main-text-color;
-      font-size: 5rem;
+      font-size: 2rem;
+      a {
+        margin-left: 1rem;
+      }
     }
   }
 

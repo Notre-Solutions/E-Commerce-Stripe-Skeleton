@@ -1,29 +1,38 @@
 import React, { Component } from 'react';
 import * as ROUTES from '../../constants/routes';
 import { Link } from 'gatsby';
-// import { ReactComponent as Logo } from '../../img/Logo.svg';
+import logo from '../../img/logo.jpg';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 class Footer extends Component {
   render() {
     return (
       <div className="footer">
         <div className="footer-section-1">
-          <div className="footer-section-1-logo-main">ERAGON</div>
+          <div className="footer-section-1-logo">
+            <Link to="/home">
+              <img
+                src={logo}
+                alt="Logo"
+                className="footer-section-1-logo-img"
+              />
+            </Link>
+          </div>
           <div className="footer-section-1-social-icons">
             <a
               href="https://www.google.com/"
               target="_blank"
-              className="fa fa-facebook"
+              className="fab fa-facebook"
             ></a>
             <a
               href="https://www.google.com/"
               target="_blank"
-              className="fa fa-instagram"
+              className="fab fa-instagram"
             ></a>
             <a
               href="https://www.google.com/"
               target="_blank"
-              className="fa fa-twitter"
+              className="fab fa-twitter"
             ></a>
           </div>
         </div>

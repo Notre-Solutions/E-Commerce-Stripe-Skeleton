@@ -136,6 +136,7 @@ class Favourites extends Component {
 
   render() {
     const { loading, fav } = this.state;
+    console.log(this.props);
     if (this.props.list) {
       var favArray = [];
       Object.keys(fav).forEach(function (key) {
@@ -185,7 +186,7 @@ class Favourites extends Component {
         </>
       );
     } else {
-      if (JSON.parse(localStorage.getItem('authUser'))) {
+      if (this.props.authUser) {
         const product = this.props.product.node;
         return (
           <>

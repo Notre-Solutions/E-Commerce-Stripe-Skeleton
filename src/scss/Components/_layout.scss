@@ -1,5 +1,5 @@
 .layout {
-  padding-top: 6rem;
+  padding-top: $nav-height;
   min-height: calc(100vh - #{$footer-height});
   margin-bottom: -$footer-height;
 }

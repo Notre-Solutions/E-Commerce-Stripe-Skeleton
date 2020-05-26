@@ -1,16 +1,18 @@
+$top: 29%;
+
 .navigation {
   z-index: 2;
   display: block;
   width: 100%;
   background-color: black;
   color: white;
-  height: 6rem;
+  height: $nav-height;
   font-size: $nav-text;
   position: fixed;
 
   ul {
     margin: 0;
-    padding-top: 1.5rem;
+    padding-top: 2.5rem;
   }
 
   a {
@@ -27,7 +29,7 @@
     &-modal {
       position: absolute;
       left: 17%;
-      top: 25%;
+      top: $top;
       &:hover {
         cursor: pointer;
       }
@@ -37,24 +39,30 @@
   &-center {
     position: absolute;
     left: 48%;
-    top: 25%;
+    top: 10%;
+    &-logo {
+      text-align: center;
+      &-img {
+        width: 4rem;
+      }
+    }
   }
 
   &-right {
     &-first {
       position: absolute;
       right: 12%;
-      top: 25%;
+      top: $top;
     }
     &-second {
       position: absolute;
       right: 8%;
-      top: 25%;
+      top: $top;
     }
     &-third {
       position: absolute;
       right: 4%;
-      top: 25%;
+      top: $top;
     }
     &-icons {
       margin-left: 4%;

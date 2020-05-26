@@ -57,11 +57,18 @@
     @include main-button(white);
     width: 16rem;
     margin: 0 0 10rem 10rem;
+
     &:hover {
       @include hover-btn;
     }
     &:active {
       @include active-btn;
     }
+  }
+
+  &-no-item {
+    margin-top: 20%;
+    font-size: 1.5rem;
+    text-align: center;
   }
 }

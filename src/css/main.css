@@ -47,12 +47,12 @@ li {
   width: 100%;
   background-color: black;
   color: white;
-  height: 6rem;
+  height: 9rem;
   font-size: 1.6rem;
   position: fixed; }
   .navigation ul {
     margin: 0;
-    padding-top: 1.5rem; }
+    padding-top: 2.5rem; }
   .navigation a {
     color: white; }
   .navigation li {
@@ -62,25 +62,29 @@ li {
     .navigation-left-modal {
       position: absolute;
       left: 17%;
-      top: 25%; }
+      top: 29%; }
       .navigation-left-modal:hover {
         cursor: pointer; }
   .navigation-center {
     position: absolute;
     left: 48%;
-    top: 25%; }
+    top: 10%; }
+    .navigation-center-logo {
+      text-align: center; }
+      .navigation-center-logo-img {
+        width: 4rem; }
   .navigation-right-first {
     position: absolute;
     right: 12%;
-    top: 25%; }
+    top: 29%; }
   .navigation-right-second {
     position: absolute;
     right: 8%;
-    top: 25%; }
+    top: 29%; }
   .navigation-right-third {
     position: absolute;
     right: 4%;
-    top: 25%; }
+    top: 29%; }
   .navigation-right-icons {
     margin-left: 4%; }
   .navigation .icon {
@@ -92,7 +96,7 @@ li {
       cursor: pointer; }
 
 .layout {
-  padding-top: 6rem;
+  padding-top: 9rem;
   min-height: calc(100vh - 22rem);
   margin-bottom: -22rem; }
 
@@ -102,7 +106,7 @@ li {
 .search {
   background: white;
   position: fixed;
-  top: calc(6rem - 0.1rem);
+  top: 9rem;
   height: 10rem;
   left: 20%;
   width: 60%;
@@ -144,12 +148,15 @@ li {
     margin-left: 20rem;
     text-align: center;
     color: white !important; }
-    .footer-section-1-logo-main {
-      font-size: 2rem; }
+    .footer-section-1-logo {
+      text-align: center; }
+      .footer-section-1-logo-img {
+        width: 10rem; }
     .footer-section-1-social-icons {
-      z-index: 2;
       color: white;
-      font-size: 5rem; }
+      font-size: 2rem; }
+      .footer-section-1-social-icons a {
+        margin-left: 1rem; }
   .footer-section-2 {
     width: 100%;
     text-align: left;
@@ -276,6 +283,10 @@ li {
               transform: translateY(0.2rem);
       -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
               box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .cart-no-item {
+    margin-top: 20%;
+    font-size: 1.5rem;
+    text-align: center; }
 
 .checkout {
   color: white;

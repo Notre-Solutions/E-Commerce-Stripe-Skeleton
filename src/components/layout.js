@@ -4,8 +4,8 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import getFirebase, { FirebaseContext } from './Firebase';
 import withAuthentication from './Session/withAuthentication';
-import '@fortawesome/fontawesome-free/css/all.css';
 import '../css/main.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 /**
  * @file payment-success.js this is the page user is sent to when stripe payment is successful

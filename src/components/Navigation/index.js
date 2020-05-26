@@ -5,6 +5,7 @@ import { ContactUsModal } from '../Modal';
 import { AuthUserContext } from '../Session';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
+import logo from '../../img/logo.jpg';
 
 import Search from '../Search';
 
@@ -42,10 +43,18 @@ class NavigationAuth extends React.Component {
             </li>
             <li className="navigation-left">
               <ContactUsModal></ContactUsModal>
-              {/* <Link to={ROUTES.CONTACT}>CONTACT</Link> */}
             </li>
             <li className="navigation-center">
-              <Link to={ROUTES.HOME}>ERAGON</Link>
+              <Link to={ROUTES.HOME}>
+                <div className="navigation-center-logo">
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    className="navigation-center-logo-img"
+                  />
+                </div>
+                ERAGON{' '}
+              </Link>
             </li>
             <li className="navigation-right-icons navigation-right-first">
               <i

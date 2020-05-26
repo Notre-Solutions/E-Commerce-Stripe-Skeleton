@@ -2,7 +2,7 @@ import React, { useContext, Component } from 'react';
 import Layout from '../components/layout';
 import { CartContext } from '../components/cart';
 import { graphql } from 'gatsby';
-import { Favourites } from '../components/AccountContent/Favourites';
+import { UserFavs } from '../components/AccountContent';
 import { AuthUserContext } from '../components/Session';
 
 /**
@@ -47,7 +47,7 @@ class ProductPageMain extends Component {
               >
                 Add to Cart
               </button>
-              <Favourites product={sku} />
+              <UserFavs product={sku} authUser={this.props.auth} />
             </div>
           );
         })}
@@ -58,16 +58,18 @@ class ProductPageMain extends Component {
 
 const ProductPage = ({ data, pageContext }) => {
   const context = useContext(CartContext);
-  const authContext = useContext(AuthUserContext);
-  console.log(authContext);
   return (
     <Layout>
-      <ProductPageMain
-        data={data}
-        pageContext={pageContext}
-        context={context}
-        auth={authContext}
-      ></ProductPageMain>
+      <AuthUserContext.Consumer>
+        {(authUser) => (
+          <ProductPageMain
+            data={data}
+            pageContext={pageContext}
+            context={context}
+            auth={authUser}
+          ></ProductPageMain>
+        )}
+      </AuthUserContext.Consumer>
     </Layout>
   );
 };

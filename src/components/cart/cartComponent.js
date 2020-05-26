@@ -28,6 +28,36 @@ const Cart = () => {
     <div className="cart">
       <CartContext.Consumer>
         {(context) => {
+          console.log(context);
+          if (context.cartTotal === '0') {
+            return (
+              <>
+                <div className="cart-no-item">
+                  Your Cart Is Currently Empty
+                </div>
+                <div className="cart-total">
+                  <div className="cart-total-title"> TOTAL</div>
+                  <div className="cart-total-value">
+                    £ {context.cartTotal / 100}
+                  </div>
+                  <div className="cart-total-postage-title">
+                    POSTAGE
+                  </div>
+                  <div className="cart-total-postage-value">FREE</div>
+                  <div className="cart-total-promocode-title">
+                    PROMOCODE
+                  </div>
+                  <input
+                    type="text"
+                    name="promo"
+                    placeholder="PromoCode.."
+                    // onChange={}
+                  ></input>
+                  <Checkout className="cart-total-checkout" />
+                </div>
+              </>
+            );
+          }
           return (
             <>
               <div>
