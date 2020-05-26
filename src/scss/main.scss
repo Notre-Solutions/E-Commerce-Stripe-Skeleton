@@ -21,10 +21,14 @@
 @import './Components/passwordForget';
 @import './Components/signup';
 @import './Components/sideTabBar';
+@import './Components/signOut';
+@import './Components/AccountContent';
+@import './Components/PasswordChangeForm';
 
-// Importing Pages
+// Importing Pages;
 @import './Pages/home';
 @import './Pages/singleProductPage';
 @import './Pages/loggedOut';
 @import './Pages/signInSignUp';
 @import './Pages/passwordFoget';
+@import './Pages/account';

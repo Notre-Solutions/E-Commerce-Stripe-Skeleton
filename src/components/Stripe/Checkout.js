@@ -26,6 +26,11 @@ export const Checkout = ({ items }) => {
       successUrl: `http://localhost:8000/payment-success/`,
       cancelUrl: `http://localhost:8000/payment-failure/`,
     });
+    // .then(() => {
+    //   // TODO:
+    //   // There is a unique ID that we could use to stor also?
+    //   // Here I want to store the itmems in DB if user is logged in.
+    // });
     if (error) {
       console.warn('Error:', error);
     }

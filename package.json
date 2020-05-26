@@ -37,8 +37,10 @@
     "react": "^16.8.6",
     "react-cookie": "^4.0.3",
     "react-cookies": "^0.1.1",
+    "react-country-region-selector": "^2.1.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-responsive-modal": "^5.0.2",
     "recompose": "^0.30.0",
     "stripe": "^8.50.0"
   },

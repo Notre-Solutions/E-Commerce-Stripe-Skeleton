@@ -1,0 +1,43 @@
+.UpdateYourDetails {
+  text-align: center;
+  width: 80%;
+  margin-left: 3%;
+  margin-top: -3rem;
+  h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  div {
+    font-size: 1.5rem;
+  }
+  .userDetails {
+    text-align: center;
+
+    .line {
+      margin-top: 1.5rem;
+      margin-left: 40%;
+      @include line(20rem);
+    }
+  }
+
+  .updateUserDetails {
+    input[type='text'] {
+      @include inputBox;
+    }
+
+    &-submit-btn {
+      @include main-button(white);
+      @include transition-ease;
+      width: 15rem;
+      &:hover {
+        @include hover-btn;
+      }
+      &:active {
+        @include active-btn;
+      }
+    }
+  }
+}

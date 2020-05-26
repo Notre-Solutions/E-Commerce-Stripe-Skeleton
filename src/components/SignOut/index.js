@@ -6,6 +6,7 @@ const SignOutButton = ({ firebase }) => (
   <button
     type="button"
     onClick={firebase ? firebase.doSignOut : () => {}}
+    className="signOut"
   >
     Sign Out
   </button>

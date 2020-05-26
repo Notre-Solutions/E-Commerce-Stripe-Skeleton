@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
+import SignOutButton from '../SignOut';
 
 const SideTab = ({ tabNames, tabContent }) => (
   <div className="SideTab">
     <Tabs selected={0}>
       <TabList>
         {tabNames.map((name) => {
+          if (name === 'Log Out') {
+            return (
+              <Button>
+                <SignOutButton />
+              </Button>
+            );
+          }
           return (
             <Tab>
               <Button>{name}</Button>

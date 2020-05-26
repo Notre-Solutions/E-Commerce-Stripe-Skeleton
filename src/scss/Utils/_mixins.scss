@@ -82,3 +82,15 @@
   margin-bottom: 2rem;
   width: 25%;
 }
+
+@mixin line($width) {
+  height: 0.1rem;
+  width: $width;
+  background: $gray;
+}
+
+@mixin v-line($height) {
+  width: 0.1rem;
+  height: $height;
+  background: $gray;
+}

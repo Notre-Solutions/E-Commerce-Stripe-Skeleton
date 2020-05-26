@@ -1,0 +1,14 @@
+.signOut {
+  @include main-button(black);
+  width: 15rem;
+  padding: 0.8rem 2rem !important;
+  border: none;
+  margin-top: 0;
+
+  &:hover {
+    @include hover-btn;
+  }
+  &:active {
+    @include active-btn;
+  }
+}

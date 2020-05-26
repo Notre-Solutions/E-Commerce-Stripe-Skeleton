@@ -469,10 +469,115 @@ li {
     height: 30rem;
     background: gray; }
   .SideTab .line {
-    height: 0.1rem;
     margin-left: 3rem;
+    height: 0.1rem;
     width: 12rem;
     background: gray; }
+
+.signOut {
+  color: white;
+  background: black;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.8rem 4rem;
+  width: 15rem;
+  padding: 0.8rem 2rem !important;
+  border: none;
+  margin-top: 0; }
+  .signOut:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  .signOut:active {
+    -webkit-transform: translateY(0.2rem);
+            transform: translateY(0.2rem);
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.UpdateYourDetails {
+  text-align: center;
+  width: 80%;
+  margin-left: 3%;
+  margin-top: -3rem; }
+  .UpdateYourDetails h1 {
+    font-size: 3rem;
+    margin: 1rem 0; }
+  .UpdateYourDetails h2 {
+    font-size: 2rem; }
+  .UpdateYourDetails div {
+    font-size: 1.5rem; }
+  .UpdateYourDetails .userDetails {
+    text-align: center; }
+    .UpdateYourDetails .userDetails .line {
+      margin-top: 1.5rem;
+      margin-left: 40%;
+      height: 0.1rem;
+      width: 20rem;
+      background: gray; }
+  .UpdateYourDetails .updateUserDetails input[type='text'] {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    border: 0.2rem solid black;
+    margin-bottom: 2rem;
+    width: 25%; }
+  .UpdateYourDetails .updateUserDetails-submit-btn {
+    color: black;
+    background: white;
+    border: 0.1rem solid black;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 0.8rem 4rem;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    width: 15rem; }
+    .UpdateYourDetails .updateUserDetails-submit-btn:hover {
+      cursor: pointer;
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05); }
+    .UpdateYourDetails .updateUserDetails-submit-btn:active {
+      -webkit-transform: translateY(0.2rem);
+              transform: translateY(0.2rem);
+      -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+              box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.passwordChangeFrom input[type='password'] {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border: 0.2rem solid black;
+  margin-bottom: 2rem;
+  width: 25%;
+  margin: 2rem; }
+
+.passwordChangeFrom h2 {
+  margin-top: 2rem; }
+
+.passwordChangeFrom-submit-btn {
+  color: white;
+  background: black;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.8rem 4rem;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  width: 25rem; }
+  .passwordChangeFrom-submit-btn:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  .passwordChangeFrom-submit-btn:active {
+    -webkit-transform: translateY(0.2rem);
+            transform: translateY(0.2rem);
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .homePage .line {
   width: 100%;
@@ -693,3 +798,8 @@ li {
   .passwordForgetPage h1 {
     margin-top: 5rem;
     font-size: 3rem; }
+
+.accountPage {
+  height: 100rem; }
+  .accountPage h1 {
+    margin: 4rem 0 4rem 0; }

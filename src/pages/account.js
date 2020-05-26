@@ -7,10 +7,12 @@ import {
   withAuthorization,
   withEmailVerification,
 } from '../components/Session';
-import PasswordForgetForm from '../components/PasswordForget';
-import PasswordChangeForm from '../components/PasswordChange';
-import LoginManagement from '../components/LoginManagement';
 import SideTab from '../components/SideTabBar';
+import {
+  UpdateYourDetails,
+  UserFavs,
+  YourOrders,
+} from '../components/AccountContent';
 /**
  * @file account.js has both Password Forgot and Password Change functionality
  * @author Nyasha Mutangadura and Stephen Kelehan
@@ -19,22 +21,33 @@ import SideTab from '../components/SideTabBar';
 const tabName = [
   'Your Orders',
   'Update Your Details',
+  'Favourites',
   'Refer A Friend',
   'Countact Us',
-  'Refunds',
   'Log Out',
 ];
-const tabConent = [<></>, <></>, <></>, <></>, <></>, <></>];
+const tabConent = [
+  <>
+    {' '}
+    <YourOrders />
+  </>,
+  <>
+    <UpdateYourDetails />
+  </>,
+  <>
+    <UserFavs />
+  </>,
+  <></>,
+  <></>,
+  <></>,
+];
 
 const AccountPageBase = () => (
   <Fragment>
     <AuthUserContext.Consumer>
       {(authUser) => (
-        <div className="container">
-          <h1>Account: {authUser.email}</h1>
-          <PasswordForgetForm />
-          <PasswordChangeForm />
-          <LoginManagement authUser={authUser} />
+        <div className="container accountPage">
+          <h1>{authUser.username}'s Account</h1>
           <SideTab tabNames={tabName} tabContent={tabConent} />
         </div>
       )}
