@@ -12,6 +12,7 @@ import {
   UpdateYourDetails,
   UserFavs,
   YourOrders,
+  ContactUs,
 } from '../components/AccountContent';
 /**
  * @file account.js has both Password Forgot and Password Change functionality
@@ -35,10 +36,12 @@ const tabConent = [
     <UpdateYourDetails />
   </>,
   <>
-    <UserFavs />
+    <UserFavs list={true} />
   </>,
   <></>,
-  <></>,
+  <>
+    <ContactUs />{' '}
+  </>,
   <></>,
 ];
 

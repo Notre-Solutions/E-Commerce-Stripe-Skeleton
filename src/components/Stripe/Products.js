@@ -4,6 +4,8 @@ import React, { useContext } from 'react';
 import { CartContext } from '../cart';
 import CheckoutWrapper from './Checkout';
 
+import { UserFavs } from '../AccountContent';
+
 export function GetProducts() {
   const data = useStaticQuery(graphql`
     query SkusForProduct {
@@ -75,6 +77,7 @@ const Products = () => {
             >
               Add to Cart
             </button>
+            <UserFavs product={product} />
           </div>
         );
       })}

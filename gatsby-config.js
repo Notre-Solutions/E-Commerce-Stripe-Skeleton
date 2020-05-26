@@ -17,6 +17,19 @@ module.exports = {
         downloadFiles: false,
       },
     },
+    {
+      resolve: `gatsby-source-googlemaps-static`,
+      options: {
+        key: process.env.YOUR_GOOGLE_MAPS_STATIC_API_KEY,
+        center: `51.504769, -0.093543`,
+        markers: [
+          {
+            location: `51.504769, -0.093543`,
+            anchor: `ANCHOR_POSITION`,
+          },
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-netlify-cms-paths`,

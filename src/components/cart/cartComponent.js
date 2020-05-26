@@ -86,7 +86,7 @@ const Cart = () => {
                         </div>
                       </div>
 
-                      <dev
+                      <div
                         onClick={(e) =>
                           context.removeFromCart(
                             product.id,
@@ -97,7 +97,7 @@ const Cart = () => {
                         className="cart-items-remove"
                       >
                         Remove
-                      </dev>
+                      </div>
                     </div>
                   );
                 })}

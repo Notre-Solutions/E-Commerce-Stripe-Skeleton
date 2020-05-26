@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withFirebase } from '../Firebase';
 import { Link } from 'gatsby';
 
-class FavouritesBtns extends Component {
+class Favourites extends Component {
   _initFirebase = false;
   constructor(props) {
     super(props);
@@ -13,7 +13,6 @@ class FavouritesBtns extends Component {
       fbId: '',
       fav: {},
     };
-
     this.addToFav = this.addToFav.bind(this);
     this.removeFromFav = this.removeFromFav.bind(this);
   }
@@ -34,7 +33,6 @@ class FavouritesBtns extends Component {
   }
 
   onListenForUserData = () => {
-    this.setState({ loading: true });
     var authUser = JSON.parse(localStorage.getItem('authUser'));
     if (authUser) {
       this.setState({ loading: true });
@@ -49,8 +47,8 @@ class FavouritesBtns extends Component {
             this.setState({
               loading: false,
               userCreated: true,
-              fbId: snapshot.key,
               fav: fav ? fav : {},
+              fbId: snapshot.key,
             });
           } else {
             this.setState({ laoding: false });
@@ -99,8 +97,11 @@ class FavouritesBtns extends Component {
     }
   };
 
-  removeFromFav = (skuId) => {
+  removeFromFav = (item) => {
+    var skuId = item.id;
     var currentFavItems = this.state.fav;
+    console.log(currentFavItems);
+    console.log(skuId);
     if (currentFavItems[skuId]) {
       delete currentFavItems[skuId];
       this.setState(() => ({
@@ -108,8 +109,6 @@ class FavouritesBtns extends Component {
       }));
 
       this.addOrUpdateUserData();
-    } else {
-      throw new Error('Item not in fav');
     }
   };
 
@@ -136,24 +135,62 @@ class FavouritesBtns extends Component {
   };
 
   render() {
-    if (JSON.parse(localStorage.getItem('authUser'))) {
-      if (this.props.remove) {
-        return (
-          <>
-            <button
-              className="Favourites-btn"
-              onClick={(e) => this.removeFromFav(this.props.skuId)}
-            >
-              Remove from Favourites
-            </button>
-          </>
-        );
-      } else {
+    const { loading, fav } = this.state;
+    if (this.props.list) {
+      var favArray = [];
+      Object.keys(fav).forEach(function (key) {
+        var product = {};
+        product.id = key;
+        product.price = fav[key].price;
+        favArray.push(product);
+        product.image = fav[key].img;
+        product.name = fav[key].name;
+        product.desc = fav[key].desc;
+        product.prodId = fav[key].productId;
+      });
+      return (
+        <>
+          {loading && <div>Loading ...</div>}
+          <div className="favourites">
+            {favArray.map((item) => {
+              return (
+                <div key={item.key} className="favourites-items">
+                  <Link to={'/' + item.prodId}>
+                    <img
+                      src={item.image}
+                      alt="Product Image"
+                      className="favourites-items-img"
+                    />
+                  </Link>
+                  <div className="favourites-items-name">
+                    {item.name}
+                    <div className="favourites-items-name-desc">
+                      {item.desc}
+                    </div>
+                  </div>
+                  <div className="favourites-items-price">
+                    PRICE
+                    <div className="favourites-items-price-value">
+                      £ {item.price / 100}
+                    </div>
+                  </div>
+                  <div
+                    className="favourites-btn-remove fa fa-trash-alt"
+                    onClick={(e) => this.removeFromFav(item)}
+                  ></div>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      );
+    } else {
+      if (JSON.parse(localStorage.getItem('authUser'))) {
         const product = this.props.product.node;
         return (
           <>
-            <button
-              className="Favourites-btn"
+            <div
+              className="favourites-btn-add"
               onClick={(e) =>
                 this.addToFav(
                   product.id,
@@ -166,106 +203,14 @@ class FavouritesBtns extends Component {
               }
             >
               Add To Favourites
-            </button>
+            </div>
           </>
         );
+      } else {
+        return <></>;
       }
-    } else {
-      return <></>;
     }
   }
 }
 
-class Favourites extends Component {
-  _initFirebase = false;
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loading: false,
-      userCreated: false,
-      fbId: '',
-      fav: {},
-    };
-  }
-
-  firebaseInit = () => {
-    if (this.props.firebase && !this._initFirebase) {
-      this._initFirebase = true;
-      this.onListenForUserData();
-    }
-  };
-
-  componentDidMount() {
-    this.firebaseInit();
-  }
-
-  componentDidUpdate() {
-    this.firebaseInit();
-  }
-
-  onListenForUserData = () => {
-    var authUser = JSON.parse(localStorage.getItem('authUser'));
-    if (authUser) {
-      this.setState({ loading: true });
-      this.props.firebase
-        .userData()
-        .orderByChild('userId')
-        .equalTo(authUser.uid)
-        .on('child_added', (snapshot) => {
-          var fbData = snapshot.val();
-          if (fbData) {
-            const { fav } = fbData;
-            this.setState({
-              loading: false,
-              fav: fav ? fav : {},
-            });
-          } else {
-            this.setState({ laoding: false });
-          }
-        });
-    }
-  };
-
-  componentWillUnmount() {
-    this.props.firebase.userData().off();
-  }
-
-  render() {
-    const { loading, fav } = this.state;
-    var favArray = [];
-    Object.keys(fav).forEach(function (key) {
-      var product = {};
-      product.id = key;
-      product.price = fav[key].price;
-      favArray.push(product);
-      product.image = fav[key].img;
-      product.name = fav[key].name;
-      product.desc = fav[key].desc;
-      product.prodId = fav[key].productId;
-    });
-    return (
-      <>
-        {loading && <div>Loading ...</div>}
-        <div className="favourites">
-          {favArray.map((item) => {
-            return (
-              <Link to={'/' + item.prodId}>
-                <img
-                  src={item.image}
-                  alt="Product Image"
-                  className="favourites-img"
-                />
-              </Link>
-            );
-          })}
-        </div>
-      </>
-    );
-  }
-}
-
-const FavouritesBtnExp = withFirebase(FavouritesBtns);
-
-export { FavouritesBtnExp };
 export default withFirebase(Favourites);

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
+import { ContactUsModal } from '../Modal';
 
 import { AuthUserContext } from '../Session';
-import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 
@@ -41,7 +41,8 @@ class NavigationAuth extends React.Component {
               <Link to={ROUTES.MENS}>MENS</Link>
             </li>
             <li className="navigation-left">
-              <Link to={ROUTES.CONTACT}>CONTACT</Link>
+              <ContactUsModal></ContactUsModal>
+              {/* <Link to={ROUTES.CONTACT}>CONTACT</Link> */}
             </li>
             <li className="navigation-center">
               <Link to={ROUTES.HOME}>ERAGON</Link>
@@ -95,7 +96,8 @@ class NavigationNonAuth extends React.Component {
               <Link to={ROUTES.MENS}>MENS</Link>
             </li>
             <li className="navigation-left">
-              <Link to={ROUTES.CONTACT}>CONTACT</Link>
+              <ContactUsModal></ContactUsModal>
+              {/* <Link to={ROUTES.CONTACT}>CONTACT</Link> */}
             </li>
             <li className="navigation-center">
               <Link to={ROUTES.HOME}>ERAGON</Link>

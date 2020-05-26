@@ -2,7 +2,7 @@ import React, { useContext, Component } from 'react';
 import Layout from '../components/layout';
 import { CartContext } from '../components/cart';
 import { graphql } from 'gatsby';
-import { FavouritesBtnExp } from '../components/AccountContent/Favourites';
+import { Favourites } from '../components/AccountContent/Favourites';
 import { AuthUserContext } from '../components/Session';
 
 /**
@@ -47,8 +47,7 @@ class ProductPageMain extends Component {
               >
                 Add to Cart
               </button>
-              <FavouritesBtnExp product={sku} />
-              <FavouritesBtnExp remove={true} skuId={sku.node.id} />
+              <Favourites product={sku} />
             </div>
           );
         })}

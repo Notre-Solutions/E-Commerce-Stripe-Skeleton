@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout';
+import Products from '../components/Stripe/Products';
 
 /**
  * @file cart.js is the cart page.
@@ -12,7 +13,11 @@ class Women extends Component {
   }
 
   render() {
-    return <Layout></Layout>;
+    return (
+      <Layout>
+        <Products />
+      </Layout>
+    );
   }
 }
 

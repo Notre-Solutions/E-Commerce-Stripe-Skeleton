@@ -42,7 +42,6 @@ li {
   cursor: pointer; }
 
 .navigation {
-  position: fixed;
   z-index: 2;
   display: block;
   width: 100%;
@@ -60,18 +59,28 @@ li {
     display: inline; }
   .navigation-left {
     padding-left: 4%; }
+    .navigation-left-modal {
+      position: absolute;
+      left: 17%;
+      top: 25%; }
+      .navigation-left-modal:hover {
+        cursor: pointer; }
   .navigation-center {
     position: absolute;
-    left: 48%; }
+    left: 48%;
+    top: 25%; }
   .navigation-right-first {
     position: absolute;
-    right: 12%; }
+    right: 12%;
+    top: 25%; }
   .navigation-right-second {
     position: absolute;
-    right: 8%; }
+    right: 8%;
+    top: 25%; }
   .navigation-right-third {
     position: absolute;
-    right: 4%; }
+    right: 4%;
+    top: 25%; }
   .navigation-right-icons {
     margin-left: 4%; }
   .navigation .icon {
@@ -545,6 +554,113 @@ li {
       -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
               box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
+.ContactUs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr; }
+  .ContactUs-left {
+    padding-left: 6rem; }
+    .ContactUs-left-map {
+      border: solid 0.1rem black; }
+    .ContactUs-left-details {
+      margin-top: 2rem;
+      text-decoration: none;
+      font-size: 2rem; }
+      .ContactUs-left-details a {
+        color: black; }
+  .ContactUs-right {
+    text-align: center; }
+    .ContactUs-right h3 {
+      font-size: 3rem; }
+    .ContactUs-right-form-group {
+      margin-top: 2rem; }
+    .ContactUs-right input[type='text'],
+    .ContactUs-right input[type='email'],
+    .ContactUs-right input[type='textarea'] {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      border-radius: 0.4rem;
+      border: 0.2rem solid black;
+      margin-bottom: 2rem;
+      width: 25%;
+      width: 30rem;
+      color: black;
+      background: rgba(128, 128, 128, 0.418); }
+    .ContactUs-right div {
+      font-size: 1.5rem; }
+    .ContactUs-right textarea {
+      resize: vertical;
+      background: rgba(128, 128, 128, 0.418);
+      max-height: 15rem;
+      min-width: 40rem;
+      min-height: 15rem;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      border-radius: 0.4rem;
+      border: 0.2rem solid black;
+      margin-bottom: 2rem;
+      width: 25%; }
+    .ContactUs-right-submit-btn {
+      color: white;
+      background: black;
+      margin-top: 1rem;
+      border-radius: 0.5rem;
+      font-size: 1.5rem;
+      text-decoration: none;
+      padding: 0.8rem 4rem;
+      -webkit-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      border: none;
+      width: 20rem; }
+      .ContactUs-right-submit-btn:hover {
+        cursor: pointer;
+        -webkit-transform: scale(1.05);
+                transform: scale(1.05); }
+      .ContactUs-right-submit-btn:active {
+        -webkit-transform: translateY(0.2rem);
+                transform: translateY(0.2rem);
+        -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.favourites-items {
+  margin: 5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  font-size: 1.6rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .favourites-items-img {
+    width: 25rem; }
+  .favourites-items-price-value {
+    font-weight: bold; }
+
+.favourites-btn-add:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05); }
+
+.favourites-btn-add:active {
+  -webkit-transform: translateY(0.2rem);
+          transform: translateY(0.2rem);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.favourites-btn-remove {
+  color: red; }
+  .favourites-btn-remove:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02); }
+  .favourites-btn-remove:active {
+    -webkit-transform: translateY(0.2rem);
+            transform: translateY(0.2rem);
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
 .passwordChangeFrom input[type='password'] {
   font-size: 1.5rem;
   padding: 0.5rem;
@@ -578,6 +694,13 @@ li {
             transform: translateY(0.2rem);
     -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.Modal-btn {
+  font-size: 2rem;
+  margin-left: 95%;
+  margin-top: 2%; }
+  .Modal-btn:hover {
+    cursor: pointer; }
 
 .homePage .line {
   width: 100%;

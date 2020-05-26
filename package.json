@@ -13,6 +13,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@stripe/stripe-js": "^1.5.0",
     "@yazanaabed/react-tabs": "^2.3.6",
+    "axios": "^0.19.2",
     "core-js": "^2.6.5",
     "firebase": "^6.0.2",
     "gatsby": "^2.4.3",
@@ -31,6 +32,7 @@
     "gatsby-remark-responsive-iframe": "^2.4.3",
     "gatsby-remark-smartypants": "^2.1.21",
     "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-source-googlemaps-static": "^1.1.1",
     "gatsby-source-stripe": "^3.0.7",
     "gatsby-transformer-remark": "^2.6.53",
     "gatsby-transformer-sharp": "^2.5.3",
@@ -40,6 +42,7 @@
     "react-country-region-selector": "^2.1.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-modal": "^3.11.2",
     "react-responsive-modal": "^5.0.2",
     "recompose": "^0.30.0",
     "stripe": "^8.50.0"

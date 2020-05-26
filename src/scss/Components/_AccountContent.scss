@@ -41,3 +41,113 @@
     }
   }
 }
+
+.ContactUs {
+  // text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &-left {
+    padding-left: 6rem;
+    &-map {
+      border: solid 0.1rem black;
+    }
+    &-details {
+      margin-top: 2rem;
+      text-decoration: none;
+      font-size: 2rem;
+      a {
+        color: black;
+      }
+    }
+  }
+
+  &-right {
+    text-align: center;
+    h3 {
+      font-size: 3rem;
+    }
+
+    &-form-group {
+      margin-top: 2rem;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='textarea'] {
+      @include inputBox;
+      width: 30rem;
+      color: black;
+      background: rgba(128, 128, 128, 0.418);
+    }
+
+    div {
+      font-size: 1.5rem;
+    }
+
+    textarea {
+      resize: vertical;
+      background: rgba(128, 128, 128, 0.418);
+      max-height: 15rem;
+      min-width: 40rem;
+      min-height: 15rem;
+      @include inputBox;
+    }
+
+    &-submit-btn {
+      @include main-button(black);
+      @include transition-ease;
+      border: none;
+      width: 20rem;
+      &:hover {
+        @include hover-btn;
+      }
+      &:active {
+        @include active-btn;
+      }
+    }
+  }
+}
+
+.favourites {
+  &-items {
+    margin: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-size: 1.6rem;
+    align-items: center;
+    &-img {
+      width: 25rem;
+    }
+
+    &-name {
+      &-desc {
+      }
+    }
+    &-price {
+      &-value {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.favourites-btn-add {
+  &:hover {
+    @include hover-btn;
+  }
+  &:active {
+    @include active-btn;
+  }
+}
+
+.favourites-btn-remove {
+  color: red;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+  &:active {
+    @include active-btn;
+  }
+}
