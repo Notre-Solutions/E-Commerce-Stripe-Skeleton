@@ -34,7 +34,7 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-source-googlemaps-static": "^1.1.1",
     "gatsby-source-stripe": "^3.0.7",
-    "gatsby-transformer-remark": "^2.6.53",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.5.3",
     "react": "^16.8.6",
     "react-cookie": "^4.0.3",
